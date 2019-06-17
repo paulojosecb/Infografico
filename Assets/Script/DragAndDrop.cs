@@ -10,15 +10,9 @@ public class DragAndDrop : MonoBehaviour
     private float deltaY;
 
     private Vector2 mousePosition;
-    private Rigidbody rigidBody;
 
-    private void Start() {
-        rigidBody = GetComponent<Rigidbody>();
-        rigidBody.useGravity = false;
-    }
 
     private void OnMouseDown() {
-        rigidBody.useGravity = false;
 
         deltaX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x;
         deltaY = Camera.main.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y;
@@ -27,10 +21,6 @@ public class DragAndDrop : MonoBehaviour
     private void OnMouseDrag() {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector2(mousePosition.x - deltaX, mousePosition.y - deltaY);
-    }
-
-    private void OnMouseUp() {
-        rigidBody.useGravity = true;
     }
 
 }
