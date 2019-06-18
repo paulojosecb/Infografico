@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: 0c836c4c847ebaf429735e7637821562
+  - enabled: 1
+    path: Assets/Scenes/Balanca2009.unity
+    guid: e9b8a828dae336d43bae66d3f1d6c254
+  - enabled: 1
+    path: Assets/Scenes/Balanca2019.unity
+    guid: 6f41046f12e78924cacfdc2368908b8c
   m_configObjects: {}
