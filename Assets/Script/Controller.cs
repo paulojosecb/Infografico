@@ -31,6 +31,7 @@ public class Controller : MonoBehaviour
         SetRendererEnabled(ui2Renderes, false);
 
         isBalanced = false;
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
