@@ -16,11 +16,14 @@ public class Controller : MonoBehaviour
     Renderer[] ui1Renderes;
     Renderer[] ui2Renderes;
 
+    public float counter;
+
     bool isBalanced;
 
     // Start is called before the first frame update
     void Start()
     {
+        counter = 0;
         posInicialEsquerdo = pratoEsquerdo.transform.position;
         posInicialDireito = pratoDireito.transform.position;
 
@@ -37,13 +40,21 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float posEsquerdo = Mathf.Round(pratoEsquerdo.transform.position.y * 100f) / 100f;
-        float posDireito = Mathf.Round(pratoDireito.transform.position.y * 100f) / 100f;
-        if ((posEsquerdo <= posDireito)) {
+        float posEsquerdo = pratoEsquerdo.transform.position.y;
+        float posDireito = pratoDireito.transform.position.y;
 
+        if (posDireito >= posEsquerdo - 0.1 && posDireito <= posEsquerdo + 0.1)
+        {
+            counter++;
+        }
+        else {
+            counter = 0;
+        }
+
+        if (counter > 120) {
             SetRendererEnabled(ui1Renderes, false);
             SetRendererEnabled(ui2Renderes, true);
-        
+
             isBalanced = true;
             print(isBalanced);
 
